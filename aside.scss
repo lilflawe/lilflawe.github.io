@@ -1,0 +1,21 @@
+@import "valuess.scss";
+.right {
+img{
+    width: 130px;
+    height: 130px;
+}
+.img1{
+    display: grid;
+    grid-template-columns: 155px 360px;
+    grid-template-rows: 150px;
+    text-align: justify;
+    font-size: 17px;
+}
+.img2{
+    display: grid;
+    grid-template-columns:155px 360px;
+    grid-template-rows: 150px;
+    text-align: justify;
+    font-size: 17px;
+}
+}

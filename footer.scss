@@ -1,0 +1,91 @@
+@import "valuess.scss";
+footer {
+  background: linear-gradient(135deg,$white, $blue);    
+  padding: 32px 16px;
+  margin-top: 48px;
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: inline-block;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      display: block;
+      object-fit: contain;
+       border-radius: 50%;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+&:hover {
+        transform: scale(1.2);
+        opacity: 0.85;
+      }
+    }
+  }
+
+  .footer-info {
+    text-align: right;
+
+    .footer-description {
+      font-family: $arrial;      
+      font-size: 14px;
+      line-height: 1.5;
+      color: $black;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 28px 20px;
+
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .footer-info {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px 16px;
+    margin-top: 32px;
+
+    .footer-social {
+      gap: 12px;
+
+      img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .footer-description {
+      font-size: 12px;
+    }
+  }
+}

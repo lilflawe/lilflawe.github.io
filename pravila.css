@@ -1,0 +1,104 @@
+@charset "UTF-8";
+main {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 32px;
+  background: rgb(255, 255, 255);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgb(0, 0, 0);
+}
+main > ol {
+  counter-reset: main-counter;
+  list-style: none;
+  padding-left: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+main > ol > li {
+  counter-increment: main-counter;
+  margin-bottom: 32px;
+  position: relative;
+  padding-left: 56px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive, Arial, cursive;
+  font-weight: bold;
+}
+main > ol > li::before {
+  content: counter(main-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: rgb(133, 200, 229);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 8px;
+}
+main > ol > li > :first-child {
+  font-weight: 700;
+  font-size: 21px;
+  margin-left: 0;
+  color: rgb(0, 0, 0);
+}
+main > ol > li ul, main > ol > li ol {
+  margin-top: 12px;
+  padding-left: 24px;
+}
+main > ol > li ol {
+  counter-reset: sub-counter;
+  list-style: none;
+}
+main > ol > li ol > li {
+  counter-increment: sub-counter;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 35px;
+  font-weight: normal;
+}
+main > ol > li ol > li::before {
+  content: counter(main-counter) "." counter(sub-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+main > ol > li ul {
+  list-style: none;
+}
+main > ol > li ul > li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 7px;
+  line-height: 1.4;
+  font-weight: normal;
+}
+main > ol > li ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+main > ol > li ul ul {
+  padding-left: 28px;
+}
+main > ol > li ul ul > li::before {
+  content: "◦";
+  font-size: 16px;
+}
+main li, main p {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=pravila.css.map */

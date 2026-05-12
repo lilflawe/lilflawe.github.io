@@ -1,0 +1,113 @@
+main {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 16px;
+}
+main .tours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+main .tours-list .tour-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 15px rgb(0, 0, 0);
+  transition: transform 0.2s;
+}
+main .tours-list .tour-card:hover {
+  transform: translateY(-5px);
+}
+main .tours-list .tour-card h1 {
+  flex: 0 0 150px;
+  font-size: 28px;
+  margin: 0;
+  color: rgb(133, 200, 229);
+  text-align: right;
+  font-family: "Comic Sans MS", "Comic Sans", cursive, Arial, cursive;
+}
+main .tours-list .tour-card .tour-image-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0, 0, 0);
+}
+main .tours-list .tour-card .tour-image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
+}
+main .tours-list .tour-card .tour-image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+main .tours-list .tour-card .tour-image-container:hover .overlay {
+  opacity: 1;
+}
+main .tours-list .tour-card .tour-image-container:hover img {
+  transform: scale(1.1);
+}
+main .tours-list .tour-card .tour-info {
+  flex: 1;
+}
+main .tours-list .tour-card .tour-info p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+main .tours-list .tour-card .tour-info h2 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive, Arial, cursive;
+  color: rgb(133, 200, 229);
+  margin-top: 0;
+}
+main .tours-list .tour-card .tour-info h3 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive, Arial, cursive;
+  color: rgb(133, 200, 229);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding-bottom: 5px;
+}
+
+.booking-button {
+  padding: 12px 24px;
+  background-color: rgb(133, 200, 229);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.booking-button:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  main .tours-list .tour-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  main .tours-list .tour-card h1 {
+    flex: none;
+    text-align: center;
+  }
+  main .tours-list .tour-card .tour-image-container {
+    width: 100%;
+    max-width: 400px;
+  }
+}/*# sourceMappingURL=tours.css.map */

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="xmlstyle.css"?>
+<contacts>
+    <headd>
+        <titlee>Наши контакты</titlee>
+    </headd>
+    <inf>
+        <name>Телефон</name>
+        <description>+375 (29) 160-06-08</description>
+    </inf>
+    <inf>
+        <name>Адрес главного офиса</name>
+        <description>ул. Советская 10 г. Минск </description>
+    </inf>
+    <inf>
+        <name>Почта</name>
+        <description>primetourby@gmail.com</description>
+    </inf>
+    <inf>
+        <name>Часы работы</name>
+        <description>Пн–Пт 10:00–19:00, Сб 11:00–16:00</description>
+    </inf>
+    <inf>
+        <name>Instagram</name>
+        <description>@primetourby</description>
+    </inf>
+</contacts>
