@@ -55,6 +55,10 @@
   padding-top: 32px;
   margin-top: 32px;
 }
+.gallery h1 {
+  font-family: "Comic Sans MS", "Comic Sans", cursive, Arial, cursive;
+  color: rgb(0, 0, 0);
+}
 .gallery__columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
