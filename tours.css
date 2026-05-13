@@ -10,6 +10,7 @@ main .tours-list {
 }
 main .tours-list .tour-card {
   display: flex;
+  gap: 24px;
   align-items: flex-start;
   background: rgb(255, 255, 255);
   border-radius: 16px;

@@ -11,6 +11,7 @@ main {
 
     .tour-card {
       display: flex;
+      gap: 24px; 
       align-items: flex-start; 
       background: $white;
       border-radius: 16px;
