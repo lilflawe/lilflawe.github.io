@@ -96,6 +96,32 @@ main .tours-list .tour-card .tour-info h3 {
   transform: scale(1.05);
 }
 
+@media (max-width: 1024px) {
+  main .tours-list {
+    gap: 32px;
+  }
+  main .tours-list .tour-card {
+    gap: 20px;
+    padding: 20px;
+  }
+  main .tours-list .tour-card h1 {
+    flex: 0 0 120px;
+    font-size: 24px;
+  }
+  main .tours-list .tour-card .tour-image-container {
+    width: 250px;
+    height: 170px;
+  }
+  main .tours-list .tour-card .tour-info h2 {
+    font-size: 22px;
+  }
+  main .tours-list .tour-card .tour-info h3 {
+    font-size: 18px;
+  }
+  main .tours-list .tour-card .tour-info p {
+    font-size: 15px;
+  }
+}
 @media (max-width: 480px) {
   main .tours-list .tour-card {
     flex-direction: column;

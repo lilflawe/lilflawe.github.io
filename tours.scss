@@ -108,8 +108,37 @@ main {
     transform: scale(1.05);
   }
 }
+@media (max-width: 1024px) {
+  main .tours-list {
+    gap: 32px;
 
-// Адаптив
+    .tour-card {
+      gap: 20px;
+      padding: 20px;
+
+      h1 {
+        flex: 0 0 120px;
+        font-size: 24px;
+      }
+
+      .tour-image-container {
+        width: 250px;
+        height: 170px;
+      }
+.tour-info {
+        h2 {
+          font-size: 22px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 480px) {
   main .tours-list .tour-card {
     flex-direction: column;

@@ -79,3 +79,61 @@ form {
       }
     }
 }
+@media (max-width: 1024px) {
+  form {
+    max-width: 90%;
+    padding: 28px 24px 36px;
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    > div {
+      input,
+      select {
+        padding: 14px 14px;
+        font-size: 15px;
+      }
+    }
+    button[type="submit"] {
+      padding: 14px;
+      font-size: 17px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  main {
+    padding: 12px;
+  }
+  form {
+    padding: 20px 16px 28px;
+    border-radius: 20px;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    > div {
+      margin-bottom: 12px;
+
+      label {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      input,
+      select {
+        padding: 12px 12px;
+        font-size: 14px;
+        border-radius: 14px;
+      }
+    }
+    button[type="submit"] {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 30px;
+    }
+    a {
+      font-size: 14px;
+    }
+  }
+}

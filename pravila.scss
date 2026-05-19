@@ -112,3 +112,101 @@ a {
     text-decoration: underline;
   }
 } 
+@media (max-width: 1024px) {
+  main {
+    padding: 24px;
+    margin: 24px 20px;
+
+    > ol > li {
+      padding-left: 48px;
+      margin-bottom: 28px;
+
+      &::before {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+        line-height: 34px;
+      }
+
+      > :first-child {
+        font-size: 19px;
+      }
+
+      ul,
+      ol {
+        padding-left: 20px;
+      }
+      ol > li {
+        padding-left: 30px;
+      }
+
+      ul > li {
+        padding-left: 20px;
+      }
+    }
+    li,
+    p {
+      font-size: 15px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  main {
+    padding: 16px;
+    margin: 16px 12px;
+    border-radius: 16px;
+
+    > ol > li {
+      padding-left: 36px;
+      margin-bottom: 24px;
+
+      &::before {
+        width: 28px;
+        height: 28px;
+        font-size: 15px;
+        line-height: 28px;
+        border-radius: 6px;
+      }
+
+      > :first-child {
+        font-size: 17px;
+      }
+ul,
+      ol {
+        padding-left: 16px;
+        margin-top: 10px;
+      }
+
+      ol > li {
+        padding-left: 25px;
+        margin-bottom: 6px;
+        &::before {
+          font-size: 13px;
+        }
+      }
+
+      ul > li {
+        padding-left: 18px;
+        margin-bottom: 5px;
+        &::before {
+          font-size: 16px;
+        }
+      }
+      ul ul {
+        padding-left: 20px;
+        > li::before {
+          font-size: 14px;
+        }
+      }
+    }
+    li,
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+
+  a {
+    font-size: 14px;
+  }
+}

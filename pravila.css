@@ -101,4 +101,92 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding: 24px;
+    margin: 24px 20px;
+  }
+  main > ol > li {
+    padding-left: 48px;
+    margin-bottom: 28px;
+  }
+  main > ol > li::before {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    line-height: 34px;
+  }
+  main > ol > li > :first-child {
+    font-size: 19px;
+  }
+  main > ol > li ul,
+  main > ol > li ol {
+    padding-left: 20px;
+  }
+  main > ol > li ol > li {
+    padding-left: 30px;
+  }
+  main > ol > li ul > li {
+    padding-left: 20px;
+  }
+  main li,
+  main p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    padding: 16px;
+    margin: 16px 12px;
+    border-radius: 16px;
+  }
+  main > ol > li {
+    padding-left: 36px;
+    margin-bottom: 24px;
+  }
+  main > ol > li::before {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+    line-height: 28px;
+    border-radius: 6px;
+  }
+  main > ol > li > :first-child {
+    font-size: 17px;
+  }
+  main > ol > li ul,
+  main > ol > li ol {
+    padding-left: 16px;
+    margin-top: 10px;
+  }
+  main > ol > li ol > li {
+    padding-left: 25px;
+    margin-bottom: 6px;
+  }
+  main > ol > li ol > li::before {
+    font-size: 13px;
+  }
+  main > ol > li ul > li {
+    padding-left: 18px;
+    margin-bottom: 5px;
+  }
+  main > ol > li ul > li::before {
+    font-size: 16px;
+  }
+  main > ol > li ul ul {
+    padding-left: 20px;
+  }
+  main > ol > li ul ul > li::before {
+    font-size: 14px;
+  }
+  main li,
+  main p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  a {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=pravila.css.map */

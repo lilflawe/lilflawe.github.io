@@ -1,4 +1,15 @@
 @import "valuess.scss";
+a {
+  text-decoration: none;
+  
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
 header {
   display: flex;
   align-items: center;
