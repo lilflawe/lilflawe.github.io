@@ -55,7 +55,7 @@
   padding-top: 32px;
   margin-top: 32px;
 }
-.gallery h1 {
+.gallery h3, .gallery h2 {
   font-family: "Comic Sans MS", "Comic Sans", cursive, Arial, cursive;
   color: rgb(0, 0, 0);
 }
