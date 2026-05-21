@@ -31,7 +31,7 @@
           <h1>Забронировать тур</h1>
           <div>
            <label>Ваше полное имя </label>
-          <input type="text" required placeholder="Иванов Иван Иванович">
+          <input type="text" id="fullname"  required placeholder="Иванов Иван Иванович">
           </div>
           <div>
           <lable>Электронная почта</lable>
@@ -39,11 +39,12 @@
           </div>
           <div>
             <lable>Телефон</lable>
-            <input type="tel" required placeholder="+375 XX XXX-XX-XX">
+            <input type="tel" id="phone" required placeholder="+375 XX XXX-XX-XX">
           </div>
           <div>
             <lable>Направление</lable>
-            <select>
+            <select id="destination" required>
+        <option value="" disabled selected>Выберите направление</option>
               <option>Направление</option>
               <option>Шанхай</option>
               <option>Рим</option>
@@ -77,10 +78,15 @@
          <button type="submit">Отправить заявку</button>
             </form>
             <script>
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    const fullnameInput = document.getElementById('fullname');
     const arrivalInput = document.getElementById('arrivalDate');
     const departureInput = document.getElementById('departureDate');
+    const destinationSelect = document.getElementById('destination');
+    const phoneInput = document.getElementById('phone');
     const form = document.getElementById('myForm');
+
+    // Ограничение даты выезда
     function updateDepartureMin() {
         if (arrivalInput.value) {
             departureInput.min = arrivalInput.value;
@@ -92,7 +98,32 @@
         }
     }
     arrivalInput.addEventListener('change', updateDepartureMin);
+
+    // Валидация формы
     form.addEventListener('submit', function(e) {
+        // 1. Проверка ФИО (фамилия + имя)
+        const fullname = fullnameInput.value.trim();
+        if (fullname === '') {
+            alert('Пожалуйста, введите ваши фамилию и имя.');
+            e.preventDefault();
+            return;
+        }
+        const words = fullname.split(/\s+/);
+        if (words.length < 2) {
+            alert('Введите, пожалуйста, и фамилию, и имя (например: Иванов Иван).');
+            e.preventDefault();
+            return;
+        }
+        const nameRegex = /^[А-Яа-яA-Za-z\-]+$/;
+        for (let word of words) {
+            if (!nameRegex.test(word)) {
+                alert('Фамилия и имя должны содержать только буквы (дефис допускается).');
+                e.preventDefault();
+                return;
+            }
+        }
+
+        // 2. Проверка дат
         if (!arrivalInput.value || !departureInput.value) {
             alert('Пожалуйста, укажите обе даты: заезда и выезда.');
             e.preventDefault();
@@ -100,18 +131,42 @@
         }
         const arrivalDate = new Date(arrivalInput.value);
         const departureDate = new Date(departureInput.value);
-
         if (departureDate < arrivalDate) {
             alert('Дата выезда не может быть раньше даты заезда.');
             e.preventDefault();
             return;
         }
+
+        // 3. Проверка направления (если добавили id)
+        if (destinationSelect && !destinationSelect.value) {
+            alert('Пожалуйста, выберите направление тура.');
+            e.preventDefault();
+            return;
+        }
+
+        // 4. Проверка телефона (начинается с +)
+        const phone = phoneInput.value.trim();
+        if (!phone.startsWith('+')) {
+            alert('Номер телефона должен начинаться с символа "+".');
+            e.preventDefault();
+            return;
+        }
+        const phoneRegex = /^\+\d[\d\s\-\(\)]{5,}$/;
+        if (!phoneRegex.test(phone)) {
+            alert('Введите корректный номер (например, +375 29 1234567).');
+            e.preventDefault();
+            return;
+        }
+
+        // Если всё ок
         alert('Спасибо за заявку! Мы свяжемся с вами.');
         form.reset();
         departureInput.min = '';
-        e.preventDefault();
+        e.preventDefault(); // Убрать, если нужна реальная отправка
     });
 });
+
+
 </script>
     </main>
     <footer>
