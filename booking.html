@@ -54,11 +54,11 @@
           </div>
           <div>
             <lable>Дата заезда</lable>
-            <input type="date">
+            <input type="date" id="arrivalDate" required>
           </div>
           <div>
             <lable>Дата выезда</lable>
-          <input type="date">
+          <input type="date" id="departureDate" required>
           </div>
           <div>
             <lable>Количество взрослых(18+)</lable>
@@ -77,11 +77,41 @@
          <button type="submit">Отправить заявку</button>
             </form>
             <script>
-    document.getElementById('myForm').addEventListener('submit', function(e) {
-        e.preventDefault(); 
+    document.addEventListener('DOMContentLoaded', function() {
+    const arrivalInput = document.getElementById('arrivalDate');
+    const departureInput = document.getElementById('departureDate');
+    const form = document.getElementById('myForm');
+    function updateDepartureMin() {
+        if (arrivalInput.value) {
+            departureInput.min = arrivalInput.value;
+            if (departureInput.value && departureInput.value < arrivalInput.value) {
+                departureInput.value = '';
+            }
+        } else {
+            departureInput.min = '';
+        }
+    }
+    arrivalInput.addEventListener('change', updateDepartureMin);
+    form.addEventListener('submit', function(e) {
+        if (!arrivalInput.value || !departureInput.value) {
+            alert('Пожалуйста, укажите обе даты: заезда и выезда.');
+            e.preventDefault();
+            return;
+        }
+        const arrivalDate = new Date(arrivalInput.value);
+        const departureDate = new Date(departureInput.value);
+
+        if (departureDate < arrivalDate) {
+            alert('Дата выезда не может быть раньше даты заезда.');
+            e.preventDefault();
+            return;
+        }
         alert('Спасибо за заявку! Мы свяжемся с вами.');
-        this.reset(); 
+        form.reset();
+        departureInput.min = '';
+        e.preventDefault();
     });
+});
 </script>
     </main>
     <footer>
